@@ -1,0 +1,22 @@
+{
+  "name": "netlify-express-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "netlify-lambda build src",
+    "start": "node api.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@netlify/functions": "^2.8.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4",
+    "serverless-http": "^3.2.0"
+  }
+}
