@@ -23,7 +23,7 @@ app.get("/.netlify/functions/api/health", (req, res) => {
 });
 
 // app.use("/.netlify/functions/api", netlifyRouter);
-app.use("/.netlify/functions//api", userRouter);
+app.use("/.netlify/functions/api", userRouter);
 
 // app.listen(port, () => {
 //   console.log(`server running on port ${port}`);
