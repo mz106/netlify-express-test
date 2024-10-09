@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "App is runnning" });
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ message: "App is healthy" });
+});
+
 app.use("/.netlify/functions/api", netlifyRouter);
 
 module.exports = app;
