@@ -1,5 +1,5 @@
 "use-strict";
-require("dotenv");
+require("dotenv").config();
 const app = require("../src/server");
 
 const port = process.env.PORT || 5001;
