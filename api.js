@@ -1,3 +1,7 @@
+"use-strict";
+require("dotenv");
 const app = require("./src/server");
 
-app.listen(3000, () => console.log("Local app listening on port 3000!"));
+const port = process.env.PORT || 5001;
+
+app.listen(port, () => console.log(`Local app listening on port ${port}!`));
