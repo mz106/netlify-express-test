@@ -1,6 +1,6 @@
 "use-strict";
 const express = require("express");
-const serverless = require("serverless-http");
+// const serverless = require("serverless-http");
 const cors = require("cors");
 const { Router } = require("express");
 
@@ -30,4 +30,4 @@ app.use("/api", userRouter);
 // });
 
 module.exports = app;
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
