@@ -1,31 +1,33 @@
 "use-strict";
 const express = require("express");
-// const serverless = require("serverless-http");
+const serverless = require("serverless-http");
 const cors = require("cors");
-// const { Router } = require("express");
+const { Router } = require("express");
 
-const port = process.env.PORT || 5001;
+// const port = process.env.PORT || 5002;
 
-// const netlifyRouter = Router();
+const netlifyRouter = Router();
+const userRouter = require("./users/routes");
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/api/", (req, res) => {
   res.status(200).json({ message: "App is runnning" });
 });
 
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({ message: "App is healthy" });
 });
 
 // app.use("/.netlify/functions/api", netlifyRouter);
+app.use("/api", userRouter);
 
-app.listen(port, () => {
-  console.log(`server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`server running on port ${port}`);
+// });
 
-// module.exports = app;
-// module.exports.handler = serverless(app);
+module.exports = app;
+module.exports.handler = serverless(app);
