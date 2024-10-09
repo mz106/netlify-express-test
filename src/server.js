@@ -14,16 +14,16 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/api/", (req, res) => {
+app.get("/.netlify/functions/api/", (req, res) => {
   res.status(200).json({ message: "App is runnning" });
 });
 
-app.get("/api/health", (req, res) => {
+app.get("/.netlify/functions/api/health", (req, res) => {
   res.status(200).json({ message: "App is healthy" });
 });
 
 // app.use("/.netlify/functions/api", netlifyRouter);
-app.use("/api", userRouter);
+app.use("/.netlify/functions//api", userRouter);
 
 // app.listen(port, () => {
 //   console.log(`server running on port ${port}`);
